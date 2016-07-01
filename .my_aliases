@@ -38,7 +38,13 @@ function gpush() {
     echo "git push origin $(current_branch):$(current_branch)"
     git push origin $(current_branch):$(current_branch)
 }
+
 alias gacm='git add .;git commit -am'
 alias gco='git checkout'
 alias gpo='git pull origin'
 alias gps='git push origin'
+
+#Who listen?
+function pslisten {
+    echo `lsof -n -i4TCP:$1 | grep LISTEN`
+}
