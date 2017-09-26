@@ -48,3 +48,4 @@ alias gps='git push origin'
 function pslisten {
     echo `lsof -n -i4TCP:$1 | grep LISTEN`
 }
+alias removeorig='find . -regex ".*\.\orig" -delete'
