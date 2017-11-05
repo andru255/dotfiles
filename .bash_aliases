@@ -38,7 +38,7 @@ function gpush() {
     echo "git push origin $(current_branch):$(current_branch)"
     git push origin $(current_branch):$(current_branch)
 }
-
+alias gst='git status'
 alias gacm='git add .;git commit -am'
 alias gco='git checkout'
 alias gpo='git pull origin'
