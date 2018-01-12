@@ -49,3 +49,13 @@ function pslisten {
     echo `lsof -n -i4TCP:$1 | grep LISTEN`
 }
 alias removeorig='find . -regex ".*\.\orig" -delete'
+
+#Only for osx
+# Apple Developer
+alias deviredData="rm -frd ~/Library/Developer/Xcode/DerivedData/*; killall Xcode; open -a Xcode"
+alias deviredDatab="rm -frd ~/Library/Developer/Xcode/DerivedData/*; killall Xcode-beta; open -a Xcode-beta"
+alias recordVideo="xcrun simctl io booted recordVideo --type=mp4 ~/Desktop/simulator.mp4"
+alias screenshot="xcrun simctl io booted screenshot ~/Desktop/simulator.png"
+alias addFile="xcrun simctl addmedia booted $file"
+alias openURL="xcrun simctl openurl booted $url"
+alias uninstallapp="xcrun simctl uninstall booted $bundle"
