@@ -30,13 +30,21 @@ function current_branch() {
 }
 
 function gpull() {
-    echo "git pull origin $(current_branch)"
-    git pull origin $(current_branch)
+    origin='origin'
+    if [ "$1" != "" ]; then
+        origin=$1
+    fi
+    echo "git pull ${origin} $(current_branch)"
+    git pull ${origin} $(current_branch)
 }
 
 function gpush() {
-    echo "git push origin $(current_branch):$(current_branch)"
-    git push origin $(current_branch):$(current_branch)
+    origin='origin'
+    if [ "$1" != "" ]; then
+        origin=$1
+    fi
+    echo "git push ${origin} $(current_branch):$(current_branch)"
+    git push ${origin} $(current_branch):$(current_branch)
 }
 alias gst='git status'
 alias gacm='git add .;git commit -am'
